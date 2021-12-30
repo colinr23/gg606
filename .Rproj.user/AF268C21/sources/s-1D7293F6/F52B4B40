@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1637097151697.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F52B4B40",
+    "lastKnownWriteTime" : 1640905592,
+    "last_content_update" : 1640905592248,
+    "path" : "~/Dropbox/course/g606/tec/gg606/02-practice.Rmd",
+    "project_path" : "02-practice.Rmd",
+    "properties" : {
+        "cursorPosition" : "9,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

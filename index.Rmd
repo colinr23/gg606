@@ -1,0 +1,99 @@
+--- 
+title: "Scientific Data Wrangling"
+author: "Colin Robertson"
+date: "`r Sys.Date()`"
+biblio-style: apalike
+description: This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method.
+documentclass: book
+link-citations: yes
+bibliography:
+- book.bib
+- packages.bib
+site: bookdown::bookdown_site
+always_allow_html: yes
+---
+
+# Introduction
+**Class Time: Thursdays, 2:30 - 5:20, Peters Building P331**
+
+Moving from data acquired by a sensor or in the field to a model or visualization that can provide insights to a question often requires an extensive amount of work. It is estimated that 'data wrangling' - cleaning, loading, processing, integrating their data comprises at [least half of a data scientist's time](https://www.datanami.com/2020/07/06/data-prep-still-dominates-data-scientists-time-survey-finds/), and that may be even higher in the context of environmental data science.  
+
+
+## Textbooks
+Wickham H, Grolemund G. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. O'Reilly Media. Chicago, available online at [http://r4ds.had.co.nz/](http://r4ds.had.co.nz/)
+
+Timbers, T-A., Campbell, T., and Lee, M. 2021. Introducation to Data Science [https://ubc-dsci.github.io/introduction-to-datascience/](https://ubc-dsci.github.io/introduction-to-datascience/)
+
+## Cheatsheets
+[Use these R-Studio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+
+## Additional Readings
+
+Broman KW, Woo KH. 2018. Data Organization in Spreadsheets. The American Statistician 72(1): 2-10. [https://doi.org/10.1080/00031305.2017.1375989](https://doi.org/10.1080/00031305.2017.1375989)
+
+Bryan J, et al. 2018. Happy Git and GitHub for the useR. [http://happygitwithr.com/](http://happygitwithr.com/)
+
+Hampton SE, Anderson SS, Bagby SC, Gries C, Han X, Hart EM, Jones MB, Lenhardt WC, MacDonald A, Michener WK, Mudge J, Pourmokhtarian A, Schildhauer MP, Woo KH, Zimmerman N. 2015. The Tao of open science for ecology. Ecosphere 6(7):120. [http://dx.doi.org/10.1890/ES14-00402.1](http://dx.doi.org/10.1890/ES14-00402.1)
+
+Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. 2016. Ten Simple Rules for Digital Data Storage. PLoS Comput Biol12(10): e1005097. [https://doi.org/10.1371/journal.pcbi.1005097](https://doi.org/10.1371/journal.pcbi.1005097)
+
+Sixteen peer-reviewed journal articles in the PeerJ Collection, Practical Data Science for Stats: [https://peerj.com/collections/50-practicaldatascistats/](https://peerj.com/collections/50-practicaldatascistats/)
+
+Wilke CO. 2019. Fundamental of Data Visualization: A Primer on Making Informative and Compelling Figures. O’Reilly Media. Chicago, [https://serialmentor.com/dataviz/](https://serialmentor.com/dataviz/)
+
+## Schedule
+```{r echo=FALSE}
+library(kableExtra)
+df <- data.frame(Week="Jan 6", Topic="Data/Science workflows", Tools="R, R-Studio")
+x2 <- c("Jan 13",	"i/o", "R (base, tidyverse)")
+x3 <- c("Jan 20", "Data objects",	"R (tidyverse)")
+x4 <- c("Jan 27", 	"Databases",	"R (tidyverse, dbply), SQLite")
+x5 <- c("Feb 03",	 "Spatial data", "R (rgdal, sp, sf, raster, terra)")
+x6 <- c("Feb 10",	 "Spatial data", "R (spatstat, gstat)")
+x7 <- c("Feb 17",	 "Reading Week", "")
+x8 <- c("Feb 24",	 "Work Period/Catch up", "")
+x9 <- c("Mar 03",	 "Temporal data", "R (ts, zoo, lubridate)")
+df <- rbind(df, x2,x3,x4,x5,x6,x7,x8, x9)
+kable(df) %>%  add_header_above(c("Wrangling" = 3))
+##############################################
+df <- data.frame(Week="Mar 10", Topic="Reproducible Research", Tools="Git, Github")
+x1 <- c("Mar 17", 	"Data Sharing and Collaboration",	"R Markdown, Docker")
+x2 <- c("Mar 24", "Project Work Period", "")
+x3 <- c("Mar 31", "R in Production",	"Docker, R-Shiny")
+x4 <- c("Apr 07", "Project Presentations",	"n/a")
+df <- rbind(df,x1, x2, x3, x4)
+kable(df) %>%  add_header_above(c("Data Science in Practice" = 3))
+
+#df <- data.frame(Week="Mar 24", Topic="Project Work Period", Tools="")
+#x3 <- c("Mar 31", "R in Production",	"Docker, R-Shiny")
+#x4 <- c("Apr 07", "Project Presentations",	"n/a")
+
+#df <- rbind(df,x3,x4)
+#kable(df) %>%  add_header_above(c("Ops and Project Management" = 3))
+
+
+## 
+
+
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+## Evaluation
+Practical Work
+
+There will be two assignments and one term project required for the course. Students will participate in an analytics studio workshop which will involve critically analyzing projects. Coursework will involve the use of a variety GIS and/or statistical software packages.
+
+### Grading
+
+ practical work            |%   
+---------------------------|:------:
+ Two term assignments | 30%  
+ Term project | 40%  
+ Analytics studio workshop |	15%  
+ Class participation | 15%  
+Total: | 100% 
+
+

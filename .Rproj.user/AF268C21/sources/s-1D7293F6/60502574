@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1637097245351.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "60502574",
+    "lastKnownWriteTime" : 1640905693,
+    "last_content_update" : 1640905693624,
+    "path" : "~/Dropbox/course/g606/tec/gg606/04-project.Rmd",
+    "project_path" : "04-project.Rmd",
+    "properties" : {
+        "cursorPosition" : "1,11",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

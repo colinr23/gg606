@@ -1,0 +1,44 @@
+# Wrangling {#intro}
+## Data Science Workflows
+### Reading (before lecture) {#wrangling-intro-reading}
+This week will provide an introduction to data science using `r`. You will be introduced to data science through the lens of exploratory data analysis, beginning with the **Explore** section of the textbook, read and work through the following chapters:
+
+* [Wickham - Introduction](https://r4ds.had.co.nz/explore-intro.html)
+* [Wickham - Data visualization](https://r4ds.had.co.nz/data-visualisation.html)
+* [Wickham - Workflow: basics](https://r4ds.had.co.nz/workflow-basics.html)
+* [Timbers - Setting up your computer](https://ubc-dsci.github.io/introduction-to-datascience/move-to-your-own-machine.html)
+
+### Excercise Review (in lecture)
+
+* Data Visualization: [1](https://r4ds.had.co.nz/data-visualisation.html#exercises-1), [2](https://r4ds.had.co.nz/data-visualisation.html#exercises-2), [3](https://r4ds.had.co.nz/data-visualisation.html#exercises-3), [4](https://r4ds.had.co.nz/data-visualisation.html#exercises-4), [5](https://r4ds.had.co.nz/data-visualisation.html#exercises-5), [6](https://r4ds.had.co.nz/data-visualisation.html#exercises-6)
+* Workflow: basics: [1](https://r4ds.had.co.nz/workflow-basics.html#exercises-7)
+
+
+<!-- ## i/o -->
+<!-- ### Reading (before lecture) {#wrangling-io} -->
+<!-- This week will cover the surprisingly important topic of data i/o - that is, data *importing* and *outputting* data. In the **Wrangle** section of the textbook, read and work through the following chapters: -->
+
+<!-- * [Data import](https://r4ds.had.co.nz/data-import.html) -->
+<!-- * [Tidy data](https://r4ds.had.co.nz/tidy-data.html) -->
+<!-- [As well as the paper](https://www.jstatsoft.org/article/view/v059i10) describing the `tidy` approach to data, published in the Journal of Statistical Software. -->
+<!-- * [Review of Data Import/Export](https://cran.r-project.org/doc/manuals/r-release/R-data.html) -->
+
+<!-- Data sources and formats vary widely in environmental data analytics. *Data acquisition* is the steps taken to access and load data for your own analysis. In a classic analysis workflow architecture, data are downloaded to a local working computer and interact with software installed there to complete your analysis.  -->
+
+<!-- Raw data almost always has to be processed in different ways to make it useful. This can in include Quality Assurance/Quality Control (QA/QC) steps such as checking and removing duplicate records, cleaning out special characters from text, to things like date formatting and computing derived variables. Having a consistent way to generate data transformations is a cornerstone of reproducible research and modern scientific data workflows. This is one of the key reasons scripting has become so important to environmental data analytics. -->
+
+<!-- The `tidy` approach to data science aims to provide a cohesive and consistent approach to data organization in `r`. One of the  -->
+
+<!-- ### Excercise Review (in lecture) -->
+
+<!-- * [Data import](https://r4ds.had.co.nz/data-import.html#exercises-22) -->
+
+<!-- ## Data objects -->
+
+<!-- ## Databases -->
+
+<!-- ## Spatial data -->
+
+<!-- ## Temporal data -->
+
+

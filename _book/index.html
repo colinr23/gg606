@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Scientific Data Wrangling</title>
+  <meta name="description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Scientific Data Wrangling" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Scientific Data Wrangling" />
+  
+  <meta name="twitter:description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
+  
+
+<meta name="author" content="Colin Robertson" />
+
+
+<meta name="date" content="2021-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="intro.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GG606</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#textbooks"><i class="fa fa-check"></i><b>1.1</b> Textbooks</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#cheatsheets"><i class="fa fa-check"></i><b>1.2</b> Cheatsheets</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#additional-readings"><i class="fa fa-check"></i><b>1.3</b> Additional Readings</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i><b>1.4</b> Schedule</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#evaluation"><i class="fa fa-check"></i><b>1.5</b> Evaluation</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#grading"><i class="fa fa-check"></i><b>1.5.1</b> Grading</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Wrangling</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#data-science-workflows"><i class="fa fa-check"></i><b>2.1</b> Data Science Workflows</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#wrangling-intro-reading"><i class="fa fa-check"></i><b>2.1.1</b> Reading (before lecture)</a></li>
+<li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#excercise-review-in-lecture"><i class="fa fa-check"></i><b>2.1.2</b> Excercise Review (in lecture)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>3</b> Assignments</a></li>
+<li class="chapter" data-level="4" data-path="term-project.html"><a href="term-project.html"><i class="fa fa-check"></i><b>4</b> Term Project</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="term-project.html"><a href="term-project.html#overview"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="term-project.html"><a href="term-project.html#presentations"><i class="fa fa-check"></i><b>4.2</b> Presentations</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Scientific Data Wrangling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Scientific Data Wrangling</h1>
+<p class="author"><em>Colin Robertson</em></p>
+<p class="date"><em>2021-12-30</em></p>
+</div>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p><strong>Class Time: Thursdays, 2:30 - 5:20, Peters Building P331</strong></p>
+<p>Moving from data acquired by a sensor or in the field to a model or visualization that can provide insights to a question often requires an extensive amount of work. It is estimated that ‘data wrangling’ - cleaning, loading, processing, integrating their data comprises at <a href="https://www.datanami.com/2020/07/06/data-prep-still-dominates-data-scientists-time-survey-finds/">least half of a data scientist’s time</a>, and that may be even higher in the context of environmental data science.</p>
+<div id="textbooks" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Textbooks</h2>
+<p>Wickham H, Grolemund G. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. O’Reilly Media. Chicago, available online at <a href="http://r4ds.had.co.nz/">http://r4ds.had.co.nz/</a></p>
+<p>Timbers, T-A., Campbell, T., and Lee, M. 2021. Introducation to Data Science <a href="https://ubc-dsci.github.io/introduction-to-datascience/">https://ubc-dsci.github.io/introduction-to-datascience/</a></p>
+</div>
+<div id="cheatsheets" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Cheatsheets</h2>
+<p><a href="https://www.rstudio.com/resources/cheatsheets/">Use these R-Studio Cheatsheets</a></p>
+</div>
+<div id="additional-readings" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Additional Readings</h2>
+<p>Broman KW, Woo KH. 2018. Data Organization in Spreadsheets. The American Statistician 72(1): 2-10. <a href="https://doi.org/10.1080/00031305.2017.1375989">https://doi.org/10.1080/00031305.2017.1375989</a></p>
+<p>Bryan J, et al. 2018. Happy Git and GitHub for the useR. <a href="http://happygitwithr.com/">http://happygitwithr.com/</a></p>
+<p>Hampton SE, Anderson SS, Bagby SC, Gries C, Han X, Hart EM, Jones MB, Lenhardt WC, MacDonald A, Michener WK, Mudge J, Pourmokhtarian A, Schildhauer MP, Woo KH, Zimmerman N. 2015. The Tao of open science for ecology. Ecosphere 6(7):120. <a href="http://dx.doi.org/10.1890/ES14-00402.1">http://dx.doi.org/10.1890/ES14-00402.1</a></p>
+<p>Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. 2016. Ten Simple Rules for Digital Data Storage. PLoS Comput Biol12(10): e1005097. <a href="https://doi.org/10.1371/journal.pcbi.1005097">https://doi.org/10.1371/journal.pcbi.1005097</a></p>
+<p>Sixteen peer-reviewed journal articles in the PeerJ Collection, Practical Data Science for Stats: <a href="https://peerj.com/collections/50-practicaldatascistats/">https://peerj.com/collections/50-practicaldatascistats/</a></p>
+<p>Wilke CO. 2019. Fundamental of Data Visualization: A Primer on Making Informative and Compelling Figures. O’Reilly Media. Chicago, <a href="https://serialmentor.com/dataviz/">https://serialmentor.com/dataviz/</a></p>
+</div>
+<div id="schedule" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Schedule</h2>
+<table>
+<thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Wrangling
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Week
+</th>
+<th style="text-align:left;">
+Topic
+</th>
+<th style="text-align:left;">
+Tools
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Jan 6
+</td>
+<td style="text-align:left;">
+Data/Science workflows
+</td>
+<td style="text-align:left;">
+R, R-Studio
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jan 13
+</td>
+<td style="text-align:left;">
+i/o
+</td>
+<td style="text-align:left;">
+R (base, tidyverse)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jan 20
+</td>
+<td style="text-align:left;">
+Data objects
+</td>
+<td style="text-align:left;">
+R (tidyverse)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jan 27
+</td>
+<td style="text-align:left;">
+Databases
+</td>
+<td style="text-align:left;">
+R (tidyverse, dbply), SQLite
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Feb 03
+</td>
+<td style="text-align:left;">
+Spatial data
+</td>
+<td style="text-align:left;">
+R (rgdal, sp, sf, raster, terra)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Feb 10
+</td>
+<td style="text-align:left;">
+Spatial data
+</td>
+<td style="text-align:left;">
+R (spatstat, gstat)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Feb 17
+</td>
+<td style="text-align:left;">
+Reading Week
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Feb 24
+</td>
+<td style="text-align:left;">
+Work Period/Catch up
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mar 03
+</td>
+<td style="text-align:left;">
+Temporal data
+</td>
+<td style="text-align:left;">
+R (ts, zoo, lubridate)
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Data Science in Practice
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Week
+</th>
+<th style="text-align:left;">
+Topic
+</th>
+<th style="text-align:left;">
+Tools
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Mar 10
+</td>
+<td style="text-align:left;">
+Reproducible Research
+</td>
+<td style="text-align:left;">
+Git, Github
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mar 17
+</td>
+<td style="text-align:left;">
+Data Sharing and Collaboration
+</td>
+<td style="text-align:left;">
+R Markdown, Docker
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mar 24
+</td>
+<td style="text-align:left;">
+Project Work Period
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mar 31
+</td>
+<td style="text-align:left;">
+R in Production
+</td>
+<td style="text-align:left;">
+Docker, R-Shiny
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Apr 07
+</td>
+<td style="text-align:left;">
+Project Presentations
+</td>
+<td style="text-align:left;">
+n/a
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="evaluation" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Evaluation</h2>
+<p>Practical Work</p>
+<p>There will be two assignments and one term project required for the course. Students will participate in an analytics studio workshop which will involve critically analyzing projects. Coursework will involve the use of a variety GIS and/or statistical software packages.</p>
+<div id="grading" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Grading</h3>
+<table>
+<thead>
+<tr class="header">
+<th>practical work</th>
+<th align="center">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Two term assignments</td>
+<td align="center">30%</td>
+</tr>
+<tr class="even">
+<td>Term project</td>
+<td align="center">40%</td>
+</tr>
+<tr class="odd">
+<td>Analytics studio workshop</td>
+<td align="center">15%</td>
+</tr>
+<tr class="even">
+<td>Class participation</td>
+<td align="center">15%</td>
+</tr>
+<tr class="odd">
+<td>Total:</td>
+<td align="center">100%</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["GG606.pdf", "GG606.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

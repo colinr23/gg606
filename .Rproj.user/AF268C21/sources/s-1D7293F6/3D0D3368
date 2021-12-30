@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1631033911771.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3D0D3368",
+    "lastKnownWriteTime" : 1638912195,
+    "last_content_update" : 1638912195184,
+    "path" : "~/Dropbox/course/g606/tec/gg606/03-management.Rmd",
+    "project_path" : "03-management.Rmd",
+    "properties" : {
+        "cursorPosition" : "1,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
