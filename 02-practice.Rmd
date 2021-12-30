@@ -1,9 +1,0 @@
-<!-- # Practice -->
-
-<!-- ## Reproducible Research -->
-
-<!-- ## Data Sharing and Collaboration -->
-
-<!-- ## R in Production -->
-
-<!-- ## Presentations -->
