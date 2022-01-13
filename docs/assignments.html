@@ -24,7 +24,7 @@
 <meta name="author" content="Colin Robertson" />
 
 
-<meta name="date" content="2022-01-06" />
+<meta name="date" content="2022-01-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -89,9 +89,21 @@
 <li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#wrangling-intro-reading"><i class="fa fa-check"></i><b>2.1.1</b> Reading</a></li>
 <li class="chapter" data-level="2.1.2" data-path="intro.html"><a href="intro.html#excercise-review"><i class="fa fa-check"></i><b>2.1.2</b> Excercise Review</a></li>
 </ul></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#io"><i class="fa fa-check"></i><b>2.2</b> i/o</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#wrangling-io"><i class="fa fa-check"></i><b>2.2.1</b> Reading</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a></li>
-<li class="chapter" data-level="4" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>4</b> Assignments</a></li>
+<li class="chapter" data-level="4" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>4</b> Assignments</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="assignments.html"><a href="assignments.html#assignment-1---importing-parsing-and-querying-data-in-the-wild"><i class="fa fa-check"></i><b>4.1</b> Assignment 1 - Importing, parsing, and querying data in the wild</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="assignments.html"><a href="assignments.html#dataset"><i class="fa fa-check"></i><b>4.1.1</b> Dataset</a></li>
+<li class="chapter" data-level="4.1.2" data-path="assignments.html"><a href="assignments.html#questions"><i class="fa fa-check"></i><b>4.1.2</b> Questions</a></li>
+<li class="chapter" data-level="4.1.3" data-path="assignments.html"><a href="assignments.html#submission"><i class="fa fa-check"></i><b>4.1.3</b> Submission</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="term-project.html"><a href="term-project.html"><i class="fa fa-check"></i><b>5</b> Term Project</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="term-project.html"><a href="term-project.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a></li>
@@ -119,7 +131,36 @@
             <section class="normal" id="section-">
 <div id="assignments" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Assignments</h1>
+<div id="assignment-1---importing-parsing-and-querying-data-in-the-wild" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Assignment 1 - Importing, parsing, and querying data in the wild</h2>
+<p>Your objective in this assignment is to read in, clean, and process a dataset. The due date of this assignment has shifted to Feb 10.</p>
+<div id="dataset" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Dataset</h3>
+<p>The National Earthquake Information Center (NEIC) determines the location and size of all significant earthquakes that occur worldwide and disseminates this information immediately to national and international agencies, scientists, critical facilities, and the general public. The NEIC compiles and provides to scientists and to the public an extensive seismic database that serves as a foundation for scientific research through the operation of modern digital national and global seismograph networks and cooperative international agreements. The NEIC is the national data center and archive for earthquake information.</p>
+<p><a href="./data/database.csv">This dataset</a> includes a record of the date, time, location, depth, magnitude, and source of every earthquake with a reported magnitude 5.5 or higher since 1965.</p>
+<p>You have to structure your assignment as a r mardown file. Watch this video (~45 mins) to learn how to start and navigate markdown files in R-Studio.</p>
+<p><em>Disclaimer: I am not endorsing buying these courses - this is just a straightforward introduction to get up to up and running with R-markdown.</em></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K418swtFnik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><a href="https://www.dropbox.com/s/fgji105ccmyrzmf/sample.Rmd">You can use the following as a template</a> [download to your working directory, and open in R-studio to edit/knit] to get you started for your assignment.</p>
+<p>Your assignment should answer the following questions and be as reproducible as you can make it (i.e., I should be able to reproduce your answers).This means that you must read data in from a URL so that I can replicate your work, do not include any external data files in your submission, only submit one .Rmd file. You can use external data to supplement your anlayses if you want to. For each answer provide a short write up explaining the approach you took to the question. There are not necessarily correct answers, and I expect your answers to vary from classmates, however you should be able to provide a clear illustration via your code of how you arrived at the conclusion you did.</p>
+</div>
+<div id="questions" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Questions</h3>
+<ol style="list-style-type: decimal">
+<li><p>Read the data in and clean it for analysis, used the <code>readr</code> package functions for reading and parsing data. [5 marks]</p></li>
+<li><p>Did more earthquakes happen on weekends or weekdays? [5 marks]</p></li>
+<li><p>Has there been any change in the frequency of earthquakes? [5 marks]</p></li>
+<li><p>What had more earthquakes in the 1980s, South America or North America? [5 marks]</p></li>
+<li><p>Has there been any geographic shifts in the distribution of earthquakes? [10 marks]</p></li>
+</ol>
+</div>
+<div id="submission" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Submission</h3>
+<p>Submit via email to Colin at the start of class on Feb 10</p>
 
+</div>
+</div>
 </div>
             </section>
 
