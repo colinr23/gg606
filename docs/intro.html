@@ -24,7 +24,7 @@
 <meta name="author" content="Colin Robertson" />
 
 
-<meta name="date" content="2022-01-29" />
+<meta name="date" content="2022-02-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,7 +101,11 @@
 <ul>
 <li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#db-resources"><i class="fa fa-check"></i><b>2.4.1</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#spatial-data"><i class="fa fa-check"></i><b>2.5</b> Spatial data</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#spatial-data"><i class="fa fa-check"></i><b>2.5</b> Spatial data</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#spatial-readings1"><i class="fa fa-check"></i><b>2.5.1</b> Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#temporal-data"><i class="fa fa-check"></i><b>2.6</b> Temporal data</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a></li>
 <li class="chapter" data-level="4" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>4</b> Assignments</a>
@@ -204,7 +208,44 @@
 </div>
 <div id="spatial-data" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Spatial data</h2>
-<!-- ## Temporal data -->
+<p>Spatial data wrangling encompasses a set of techniques usually found in standard GIS courses. Tasks such as spatial query, spatial overlay, combining vector and raster data, are all often necessary steps in preparing spatial data for analysis. Due to the mature collection of packages for working with spatial data n <code>r</code>, all of these operations can be performed in <code>r</code>, generally through a <code>tidy</code> workflow. We will review some of the more common spatial wrangling tasks this week through a tutorial.</p>
+<div id="spatial-readings1" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Reading</h3>
+<ul>
+<li><a href="https://colinr23.github.io/gg501/lecs/gg501-W4.pdf">501 Lecture slides for review</a></li>
+<li><a href="https://journal.r-project.org/archive/2018/RJ-2018-009/RJ-2018-009.pdf">Pebezma 2018</a></li>
+<li><a href="https://keen-swartz-3146c4.netlify.app/geometries.html">Pebezma - geom</a></li>
+<li><a href="https://keen-swartz-3146c4.netlify.app/sf.html">Pebezma - sf</a></li>
+</ul>
+<!---* [Gimond Appendix- Walk-thru of common spatial operations](https://mgimond.github.io/Spatial/reading-and-writing-spatial-data-in-r.html#app1_2)-->
+<!--### Examples with `nc` dataset-->
+<!--#### Point in polygon counts
+Data: [point event crime in waterloo](https://www.wrps.on.ca/en/about-us/reports-publications-and-surveys.aspx), [polygon census units in waterloo](https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm)
+Task: for a given type of crime, subset and count occurences within each census unit
+Operation: Spatial query/subsetting
+
+Read data in:-->
+<!--We now have `ct` which is an `sf` class and we have `df` which is a regular data frame. This is a regular situation where point data are often just stored as regular columns in a table.
+
+#### Create `sf` object from coordinates in a table -->
+<!--#### Measuring the length of lines within polygons
+
+#### Average attirbute value of point within polygons
+
+#### Average value of a raster within polygons
+
+#### Extract value of raster to points as new attribute
+
+#### Downsample a raster
+
+#### Interpolate a surface and average over polygons
+
+#### Dissovle boundaries between adjacent polygons-->
+<!--#### Calcuate a point pattern kensity estimate -->
+</div>
+</div>
+<div id="temporal-data" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Temporal data</h2>
 
 </div>
 </div>
