@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Scientific Data Wrangling</title>
+  <title>Chapter 5 Term Project - Analytics Studio Demo | Scientific Data Wrangling</title>
   <meta name="description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Scientific Data Wrangling" />
+  <meta property="og:title" content="Chapter 5 Term Project - Analytics Studio Demo | Scientific Data Wrangling" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Scientific Data Wrangling" />
+  <meta name="twitter:title" content="Chapter 5 Term Project - Analytics Studio Demo | Scientific Data Wrangling" />
   
   <meta name="twitter:description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="assignments.html"/>
 
-<link rel="next" href="intro.html"/>
 <script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -210,279 +210,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Scientific Data Wrangling</h1>
-<p class="author"><em>Colin Robertson</em></p>
-<p class="date"><em>2022-02-10</em></p>
+<div id="term-project---analytics-studio-demo" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Term Project - Analytics Studio Demo</h1>
+<div id="overview" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Overview</h2>
+<p>The goal of this project is to demonstrate a technical topic to an audience in an interesting way. Being able to communicate technical details in accessible ways is a critical skill for working with collaborators on scientific projects. People need to know what you did, what decisions were made and why, how they affected the outcome, and potential issues or shortcomings in the approach taken. While peer-review is one part of the scientific knowledge production process - increasingly it is not sufficient to just describe your methods in a paper, but these must be presented as supplementary code or a notebook which documents exact data processing steps.</p>
+<p>Your task for the term project is to provide a complete analytic walk-thru of an existing analysis from a paper in an area of interest (i.e., replicated by you) or through a demonstration of a specialized statistical or analysis method through the use of <code>r</code> packages. If you are demoing a method this must be a completely new demonstration and ideally will compare and contrast multiple packages, not simply a rehashing of an existing tutorial or vignette. Please consult with me to confirm your chosen topic.</p>
+<p>There are two fundamental parts to this projet, demonstration, and critique.</p>
+<div id="demonstration" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Demonstration</h3>
+<p>In this part of the project your goal is to articulate as clearly as possible to a scientific but non-specialized audience the full scope of your analysis. This should comprise about half of your written report and about 70% of your presentation/overview in class.</p>
 </div>
-<div id="introduction" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p><strong>Class Time: Thursdays, 2:30 - 5:20, Peters Building P331</strong></p>
-<p>Moving from data acquired by a sensor or in the field to a model or visualization that can provide insights to a question often requires an extensive amount of work. It is estimated that ‘data wrangling’ - cleaning, loading, processing, integrating their data comprises at <a href="https://www.datanami.com/2020/07/06/data-prep-still-dominates-data-scientists-time-survey-finds/">least half of a data scientist’s time</a>, and that may be even higher in the context of environmental data science.</p>
-<p><a href="./GG606-W2022.pdf">The official course outline is available here</a></p>
-<div id="textbooks" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Textbooks</h2>
-<p>Wickham H, Grolemund G. 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. O’Reilly Media. Chicago, available online at <a href="http://r4ds.had.co.nz/">http://r4ds.had.co.nz/</a></p>
-<p>Timbers, T-A., Campbell, T., and Lee, M. 2021. Introducation to Data Science <a href="https://ubc-dsci.github.io/introduction-to-datascience/">https://ubc-dsci.github.io/introduction-to-datascience/</a></p>
+<div id="critique" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Critique</h3>
+<p>In this part of the project you should critically analyze the analysis and/or methods implemented in the package. Focus here on issues of data quality, uncertainty, key parameters, workflow, etc. Your aim here is to provide a critical overview of the methods and analysis presented so as to provide guidance and advice to scientific collaborators.</p>
 </div>
-<div id="cheatsheets" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Cheatsheets</h2>
-<p><a href="https://www.rstudio.com/resources/cheatsheets/">Use these R-Studio Cheatsheets</a></p>
 </div>
-<div id="additional-readings" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Additional Readings</h2>
-<p>Broman KW, Woo KH. 2018. Data Organization in Spreadsheets. The American Statistician 72(1): 2-10. <a href="https://doi.org/10.1080/00031305.2017.1375989">https://doi.org/10.1080/00031305.2017.1375989</a></p>
-<p>Bryan J, et al. 2018. Happy Git and GitHub for the useR. <a href="http://happygitwithr.com/">http://happygitwithr.com/</a></p>
-<p>Hampton SE, Anderson SS, Bagby SC, Gries C, Han X, Hart EM, Jones MB, Lenhardt WC, MacDonald A, Michener WK, Mudge J, Pourmokhtarian A, Schildhauer MP, Woo KH, Zimmerman N. 2015. The Tao of open science for ecology. Ecosphere 6(7):120. <a href="http://dx.doi.org/10.1890/ES14-00402.1">http://dx.doi.org/10.1890/ES14-00402.1</a></p>
-<p>Hart EM, Barmby P, LeBauer D, Michonneau F, Mount S, Mulrooney P, et al. 2016. Ten Simple Rules for Digital Data Storage. PLoS Comput Biol12(10): e1005097. <a href="https://doi.org/10.1371/journal.pcbi.1005097">https://doi.org/10.1371/journal.pcbi.1005097</a></p>
-<p>Sixteen peer-reviewed journal articles in the PeerJ Collection, Practical Data Science for Stats: <a href="https://peerj.com/collections/50-practicaldatascistats/">https://peerj.com/collections/50-practicaldatascistats/</a></p>
-<p>Wilke CO. 2019. Fundamental of Data Visualization: A Primer on Making Informative and Compelling Figures. O’Reilly Media. Chicago, <a href="https://serialmentor.com/dataviz/">https://serialmentor.com/dataviz/</a></p>
-</div>
-<div id="schedule" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Schedule</h2>
-<table>
-<thead>
-<tr>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
-<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
-Wrangling
-</div>
-</th>
-</tr>
-<tr>
-<th style="text-align:left;">
-Week
-</th>
-<th style="text-align:left;">
-Topic
-</th>
-<th style="text-align:left;">
-Tools
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Jan 6
-</td>
-<td style="text-align:left;">
-<a href="lecs/GG606-W1.pdf">Data/Science workflows</a>
-</td>
-<td style="text-align:left;">
-R, R-Studio
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jan 13
-</td>
-<td style="text-align:left;">
-<a href="lecs/GG606-W2.pdf">i/o</a>
-</td>
-<td style="text-align:left;">
-R (base, tidyverse)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jan 20
-</td>
-<td style="text-align:left;">
-<a href="lecs/GG606-W3.pdf">Data objects</a>
-</td>
-<td style="text-align:left;">
-R (tidyverse)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Jan 27
-</td>
-<td style="text-align:left;">
-<a href="lecs/GG606-W4.pdf">Databases</a>
-</td>
-<td style="text-align:left;">
-R (tidyverse, dbply), SQLite
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Feb 03
-</td>
-<td style="text-align:left;">
-Spatial data
-</td>
-<td style="text-align:left;">
-R (rgdal, sp, sf, raster, terra)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Feb 10
-</td>
-<td style="text-align:left;">
-Spatial data
-</td>
-<td style="text-align:left;">
-R (spatstat, gstat)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Feb 17
-</td>
-<td style="text-align:left;">
-Work Period/Catch up
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Feb 24
-</td>
-<td style="text-align:left;">
-Reading Week
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mar 03
-</td>
-<td style="text-align:left;">
-Temporal data
-</td>
-<td style="text-align:left;">
-R (ts, zoo, lubridate)
-</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
-<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
-Data Science in Practice
-</div>
-</th>
-</tr>
-<tr>
-<th style="text-align:left;">
-Week
-</th>
-<th style="text-align:left;">
-Topic
-</th>
-<th style="text-align:left;">
-Tools
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Mar 10
-</td>
-<td style="text-align:left;">
-Reproducible Research
-</td>
-<td style="text-align:left;">
-Git, Github
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mar 17
-</td>
-<td style="text-align:left;">
-Data Sharing and Collaboration
-</td>
-<td style="text-align:left;">
-R Markdown, Docker
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mar 24
-</td>
-<td style="text-align:left;">
-Project Work Period
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Mar 31
-</td>
-<td style="text-align:left;">
-R in Production
-</td>
-<td style="text-align:left;">
-Docker, R-Shiny
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Apr 07
-</td>
-<td style="text-align:left;">
-Project Presentations
-</td>
-<td style="text-align:left;">
-n/a
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="evaluation" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Evaluation</h2>
-<p>Evaluation in the course will be comprised of a mix of hands-on components designed to build skills in environmental data science. There will be two assignments and one project required for the course. Students will be required to give a technical demonstration of their work and a project write-up.</p>
-<div id="grading" class="section level3" number="1.5.1">
-<h3><span class="header-section-number">1.5.1</span> Grading</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Assessment Component</th>
-<th align="left">Weighting</th>
-<th align="center">Due Date</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Assignments (2X15%)</td>
-<td align="left">30%</td>
-<td align="center">Feb 10, Mar 03</td>
-</tr>
-<tr class="even">
-<td>Analytics Studio Demo</td>
-<td align="left">40%</td>
-<td align="center">Mar 31, Apr 07</td>
-</tr>
-<tr class="odd">
-<td>Participation</td>
-<td align="left">15%</td>
-<td align="center">N/A</td>
-</tr>
-<tr class="even">
-<td>Course notebook</td>
-<td align="left">15%</td>
-<td align="center">Apr 07</td>
-</tr>
-<tr class="odd">
-<td>Total:</td>
-<td align="left">100%</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+<div id="submission" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Submission</h2>
+<p>The term project here is comprised of a written report and an in-class demonstration (i.e., delivered via zoom for remote participants).
+The report will be worth 65 points according to the following breakdown:</p>
+<ul>
+<li>Technical depth - /40</li>
+<li>Critique - /25</li>
+<li>Accuracy - /20</li>
+<li>Writing style - /15</li>
+</ul>
+<p>The presentation will be worth 35 points and graded according to the following breakdown:</p>
+<ul>
+<li>Aesthetic appeal - /25</li>
+<li>Clarity and communication style - /25</li>
+<li>Technical completeness - /50</li>
+</ul>
+<p>The report should be no longer than 4000 words. The presentation should be between 13-15 minutes. The presentation file will not be submitted for grading.</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -490,8 +251,8 @@ n/a
           </div>
         </div>
       </div>
+<a href="assignments.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
