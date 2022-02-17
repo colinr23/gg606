@@ -24,7 +24,7 @@
 <meta name="author" content="Colin Robertson" />
 
 
-<meta name="date" content="2022-02-10" />
+<meta name="date" content="2022-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,69 +54,6 @@
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -276,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="spatial-data" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Spatial data</h2>
-<p>Spatial data wrangling encompasses a set of techniques usually found in standard GIS courses. Tasks such as spatial query, spatial overlay, combining vector and raster data, are all often necessary steps in preparing spatial data for analysis. Due to the mature collection of packages for working with spatial data n <code>r</code>, all of these operations can be performed in <code>r</code>, generally through a <code>tidy</code> workflow. We will review some of the more common spatial wrangling tasks this week through a tutorial.</p>
+<p>Spatial data wrangling encompasses a set of techniques usually found in standard GIS courses. Tasks such as spatial query, spatial overlay, combining vector and raster data, are all often necessary steps in preparing spatial data for analysis. Due to the mature collection of packages for working with spatial data n <code>r</code>, all of these operations can be performed in <code>r</code>, generally through a <code>tidy</code> workflow.</p>
 <div id="spatial-readings1" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Reading</h3>
 <ul>
@@ -286,172 +223,282 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://keen-swartz-3146c4.netlify.app/sf.html">Pebezma - sf</a></li>
 <li><a href="https://mgimond.github.io/Spatial/reading-and-writing-spatial-data-in-r.html#app1_2">Gimond Appendix- Walk-thru of common spatial operations</a></li>
 </ul>
-<div id="point-in-polygon-counts" class="section level4" number="2.5.1.1">
-<h4><span class="header-section-number">2.5.1.1</span> Point in polygon counts</h4>
-<p>Data: <a href="https://www.wrps.on.ca/en/about-us/reports-publications-and-surveys.aspx">point event crime in waterloo</a>, <a href="https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm">polygon census units in waterloo</a>
+<!---#### Point in polygon counts
+Data: [point event crime in waterloo](https://www.wrps.on.ca/en/about-us/reports-publications-and-surveys.aspx), [polygon census units in waterloo](https://www12.statcan.gc.ca/census-recensement/2011/geo/bound-limit/bound-limit-2016-eng.cfm)
 Task: for a given type of crime, subset and count occurences within each census unit
-Operation: Spatial query/subsetting</p>
-<p>Read data in:</p>
-<pre><code>## [1] TRUE</code></pre>
-<pre><code>## Reading layer `lct_000b16a_e&#39; from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/lct_000b16a_e.shp&#39; using driver `ESRI Shapefile&#39;
+Operation: Spatial query/subsetting
+
+Read data in:
+
+
+```
+## [1] TRUE
+```
+
+```
+## Reading layer `lct_000b16a_e' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/lct_000b16a_e.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 5721 features and 8 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
 ## bbox:           xmin: 3912489 ymin: 693729 xmax: 8996156 ymax: 2810986
-## projected CRS:  PCS_Lambert_Conformal_Conic</code></pre>
-<p><img src="GG606_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>The <a href="https://rowopendata-rmw.opendata.arcgis.com/datasets/KitchenerGIS::park-natural-area-ecological-land-classification/explore?location=43.442066%2C-80.480368%2C12.00&amp;showTable=true">Region of Waterloo</a> has an open data we can access some other datasets from:</p>
-<p>We now have <code>ct</code> which is an <code>sf</code> class which represents census tracts in the Waterloo area.</p>
-</div>
-<div id="read-in-our-three-spatial-data-files" class="section level4" number="2.5.1.2">
-<h4><span class="header-section-number">2.5.1.2</span> Read in our three spatial data files</h4>
-<pre><code>## Reading layer `Trails&#39; from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Trails/Trails.shp&#39; using driver `ESRI Shapefile&#39;
+## projected CRS:  PCS_Lambert_Conformal_Conic
+```
+
+<img src="GG606_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+
+The [Region of Waterloo](https://rowopendata-rmw.opendata.arcgis.com/datasets/KitchenerGIS::park-natural-area-ecological-land-classification/explore?location=43.442066%2C-80.480368%2C12.00&showTable=true) has an open data we can access some other datasets from:
+
+We now have `ct` which is an `sf` class which represents census tracts in the Waterloo area.
+
+#### Read in our three spatial data files 
+
+```
+## Reading layer `Trails' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Trails/Trails.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 1633 features and 28 fields
 ## geometry type:  MULTILINESTRING
 ## dimension:      XY
 ## bbox:           xmin: -80.81168 ymin: 43.26102 xmax: -80.27309 ymax: 43.65101
-## geographic CRS: WGS 84</code></pre>
-<pre><code>## Reading layer `Park_Natural_Area_Ecological_Land_Classification&#39; from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Park_Natural_Area_Ecological_Land_Classification/Park_Natural_Area_Ecological_Land_Classification.shp&#39; using driver `ESRI Shapefile&#39;
+## geographic CRS: WGS 84
+```
+
+```
+## Reading layer `Park_Natural_Area_Ecological_Land_Classification' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Park_Natural_Area_Ecological_Land_Classification/Park_Natural_Area_Ecological_Land_Classification.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 625 features and 12 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
 ## bbox:           xmin: -80.55806 ymin: 43.37734 xmax: -80.40301 ymax: 43.50665
-## geographic CRS: WGS 84</code></pre>
-<pre><code>## [1] &quot;PCS_Lambert_Conformal_Conic&quot;</code></pre>
-<pre><code>## [1] &quot;+proj=lcc +lat_0=63.390675 +lon_0=-91.8666666666667 +lat_1=49 +lat_2=77 +x_0=6200000 +y_0=3000000 +datum=NAD83 +units=m +no_defs&quot;</code></pre>
-<pre><code>## [1] &quot;WGS 84&quot;</code></pre>
-<pre><code>## [1] &quot;+proj=longlat +datum=WGS84 +no_defs&quot;</code></pre>
-<pre><code>## [1] &quot;WGS 84&quot;</code></pre>
-<pre><code>## [1] &quot;+proj=longlat +datum=WGS84 +no_defs&quot;</code></pre>
-<pre><code>## [1] 4326</code></pre>
-<p><img src="GG606_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Here we can make some further observations of our data.</p>
-<ol style="list-style-type: decimal">
-<li>Our reprojection worked as the dare plotting correctly</li>
-<li>The trails layer exceeds the boundaries of the <code>ct</code> layer</li>
-<li>There are no <code>eco</code> polygons in the outer areas of the <code>ct</code>s</li>
-</ol>
-<p>We can clip the <code>trails</code> layer to the bounds of the <code>ct</code> layer. It might be useful to generate a study area polygon based on the union of the polygons in <code>ct</code>. We saw last week we can do this using <code>dplyr</code> syntax for grouping</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro.html#cb12-1" aria-hidden="true"></a>studyArea &lt;-<span class="st"> </span>ct <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb12-2"><a href="intro.html#cb12-2" aria-hidden="true"></a><span class="st">  </span><span class="kw">group_by</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb12-3"><a href="intro.html#cb12-3" aria-hidden="true"></a><span class="st">  </span><span class="kw">summarise</span>()</span>
-<span id="cb12-4"><a href="intro.html#cb12-4" aria-hidden="true"></a><span class="kw">plot</span>(<span class="kw">st_geometry</span>(studyArea))</span></code></pre></div>
-<p><img src="GG606_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>which we can now provide to a clip operation..</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="intro.html#cb13-1" aria-hidden="true"></a>trails_clip &lt;-<span class="st"> </span><span class="kw">st_intersection</span>(trails, studyArea)</span></code></pre></div>
-<pre><code>## Warning: attribute variables are assumed to be spatially constant throughout all
-## geometries</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="intro.html#cb15-1" aria-hidden="true"></a><span class="co">#we can inspect the attributes to make sure </span></span>
-<span id="cb15-2"><a href="intro.html#cb15-2" aria-hidden="true"></a><span class="kw">names</span>(trails)</span></code></pre></div>
-<pre><code>##  [1] &quot;OBJECTID&quot;   &quot;TrailType&quot;  &quot;TrailName&quot;  &quot;Streetname&quot; &quot;Municipali&quot;
-##  [6] &quot;Settlement&quot; &quot;OwnedBy&quot;    &quot;Maintained&quot; &quot;OnOffRoad&quot;  &quot;SurfaceMat&quot;
-## [11] &quot;Obstructio&quot; &quot;InstallDat&quot; &quot;Width_m&quot;    &quot;Length_m&quot;   &quot;Notes&quot;     
-## [16] &quot;LifeStatus&quot; &quot;RMWID&quot;      &quot;CreatedUse&quot; &quot;CreatedDat&quot; &quot;LastEdited&quot;
-## [21] &quot;LastEdit_1&quot; &quot;LucityAuto&quot; &quot;InLucity&quot;   &quot;LastSyncDa&quot; &quot;SegmentLuc&quot;
-## [26] &quot;SHAPESTLen&quot; &quot;ContractNu&quot; &quot;Comments&quot;   &quot;geometry&quot;</code></pre>
-<p>Examining these, we probably do not want to rely on <code>Length_m</code> in <code>trails_clip</code> since those lengths are going to refer to the length of the trial prior to us clipping them by the <code>ct</code> geometry. This is not a huge problem because we can extract geometric properties like length automatically from the geometry of the layer itself:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="intro.html#cb17-1" aria-hidden="true"></a><span class="co">#always good to do some spot checking when wrangling</span></span>
-<span id="cb17-2"><a href="intro.html#cb17-2" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">st_length</span>(<span class="kw">st_geometry</span>(trails)))</span></code></pre></div>
-<pre><code>## Units: [m]
-## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="intro.html#cb19-1" aria-hidden="true"></a><span class="kw">head</span>(trails<span class="op">$</span>Length_m)</span></code></pre></div>
-<pre><code>## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="intro.html#cb21-1" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">st_length</span>(<span class="kw">st_geometry</span>(trails_clip)))</span></code></pre></div>
-<pre><code>## Units: [m]
-## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="intro.html#cb23-1" aria-hidden="true"></a><span class="kw">head</span>(trails_clip<span class="op">$</span>Length_m)</span></code></pre></div>
-<pre><code>## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084</code></pre>
-<p>Now we see we are getting identical results, but we have to remember only a few trails (i.e., those at the edges) are going to be affected by this issue. The safe thing to do would be do ignore <code>Length_m</code> in the table and just use the result of <code>st_length</code> in any analysis. BUT for the purposes of illustration let’s explore where the discrepancy exists. We want to find rows in <code>trails_clip</code> have a different value for <code>Length_m</code> than the corresponding rows in <code>trails</code>. It is also possible that some entire features were clipped out - we can check this by simpling comparing the number of features/rows in each:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="intro.html#cb25-1" aria-hidden="true"></a><span class="kw">nrow</span>(trails)<span class="op">==</span><span class="kw">nrow</span>(trails_clip)</span></code></pre></div>
-<pre><code>## [1] FALSE</code></pre>
-<p>Where we can see that in fact there are less features in <code>trails_clip</code>. If we look at how data are structured in the <code>trails</code> data we can learn more about how things are stored:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="intro.html#cb27-1" aria-hidden="true"></a><span class="kw">head</span>(trails)</span></code></pre></div>
-<pre><code>## Simple feature collection with 6 features and 28 fields
+## geographic CRS: WGS 84
+```
+
+```
+## [1] "PCS_Lambert_Conformal_Conic"
+```
+
+```
+## [1] "+proj=lcc +lat_0=63.390675 +lon_0=-91.8666666666667 +lat_1=49 +lat_2=77 +x_0=6200000 +y_0=3000000 +datum=NAD83 +units=m +no_defs"
+```
+
+```
+## [1] "WGS 84"
+```
+
+```
+## [1] "+proj=longlat +datum=WGS84 +no_defs"
+```
+
+```
+## [1] "WGS 84"
+```
+
+```
+## [1] "+proj=longlat +datum=WGS84 +no_defs"
+```
+
+```
+## [1] 4326
+```
+
+<img src="GG606_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
+Here we can make some further observations of our data. 
+
+1. Our reprojection worked as the dare plotting correctly
+2. The trails layer exceeds the boundaries of the `ct` layer
+3. There are no `eco` polygons in the outer areas of the `ct`s 
+
+We can clip the `trails` layer to the bounds of the `ct` layer. It might be useful to generate a study area polygon based on the union of the polygons in `ct`. We saw last week we can do this using `dplyr` syntax for grouping
+
+
+```r
+studyArea <- ct %>% 
+  group_by() %>% 
+  summarise()
+plot(st_geometry(studyArea))
+```
+
+<img src="GG606_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+
+which we can now provide to a clip operation..
+
+
+```r
+trails_clip <- st_intersection(trails, studyArea)
+```
+
+```
+## Warning: attribute variables are assumed to be spatially constant throughout all
+## geometries
+```
+
+```r
+#we can inspect the attributes to make sure 
+names(trails)
+```
+
+```
+##  [1] "OBJECTID"   "TrailType"  "TrailName"  "Streetname" "Municipali"
+##  [6] "Settlement" "OwnedBy"    "Maintained" "OnOffRoad"  "SurfaceMat"
+## [11] "Obstructio" "InstallDat" "Width_m"    "Length_m"   "Notes"     
+## [16] "LifeStatus" "RMWID"      "CreatedUse" "CreatedDat" "LastEdited"
+## [21] "LastEdit_1" "LucityAuto" "InLucity"   "LastSyncDa" "SegmentLuc"
+## [26] "SHAPESTLen" "ContractNu" "Comments"   "geometry"
+```
+
+Examining these, we probably do not want to rely on `Length_m` in `trails_clip` since those lengths are going to refer to the length of the trial prior to us clipping them by the `ct` geometry. This is not a huge problem because we can extract geometric properties like length automatically from the geometry of the layer itself: 
+
+
+```r
+#always good to do some spot checking when wrangling
+head(st_length(st_geometry(trails)))
+```
+
+```
+## Units: [m]
+## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084
+```
+
+```r
+head(trails$Length_m)
+```
+
+```
+## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084
+```
+
+```r
+head(st_length(st_geometry(trails_clip)))
+```
+
+```
+## Units: [m]
+## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084
+```
+
+```r
+head(trails_clip$Length_m)
+```
+
+```
+## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084
+```
+
+Now we see we are getting identical results, but we have to remember only a few trails (i.e., those at the edges) are going to be affected by this issue. The safe thing to do would be do ignore `Length_m` in the table and just use the result of `st_length` in any analysis. BUT for the purposes of illustration let's explore where the discrepancy exists. We want to find rows in `trails_clip` have a different value for `Length_m` than the corresponding rows in `trails`. It is also possible that some entire features were clipped out - we can check this by simpling comparing the number of features/rows in each:
+
+
+```r
+nrow(trails)==nrow(trails_clip)
+```
+
+```
+## [1] FALSE
+```
+
+Where we can see that in fact there are less features in `trails_clip`. If we look at how data are structured in the `trails` data we can learn more about how things are stored:
+
+
+```r
+head(trails)
+```
+
+```
+## Simple feature collection with 6 features and 28 fields
 ## geometry type:  MULTILINESTRING
 ## dimension:      XY
 ## bbox:           xmin: 536694.7 ymin: 4801974 xmax: 556613.6 ymax: 4814768
 ## projected CRS:  NAD83 / UTM zone 17N
 ##   OBJECTID TrailType                                              TrailName
-## 1        1 Multi-Use                                                   &lt;NA&gt;
+## 1        1 Multi-Use                                                   <NA>
 ## 2        2 Multi-Use                 Trans Canada Trail \\ Iron Horse Trail
 ## 3        3 Multi-Use Trans Canada Trail \\ Iron Horse Trail \\ Laurel Trail
 ## 4        4 Multi-Use                                     Trans Canada Trail
 ## 5        5 Multi-Use                     Trans Canada Trail \\ Laurel Trail
 ## 6        6 Multi-Use                                     Trans Canada Trail
 ##         Streetname Municipali Settlement   OwnedBy Maintained OnOffRoad
-## 1             &lt;NA&gt;  Cambridge  Cambridge Cambridge  Cambridge       Off
-## 2             &lt;NA&gt;   Waterloo   Waterloo  Waterloo   Waterloo       Off
-## 3             &lt;NA&gt;   Waterloo   Waterloo  Waterloo   Waterloo       Off
+## 1             <NA>  Cambridge  Cambridge Cambridge  Cambridge       Off
+## 2             <NA>   Waterloo   Waterloo  Waterloo   Waterloo       Off
+## 3             <NA>   Waterloo   Waterloo  Waterloo   Waterloo       Off
 ## 4 University Ave W   Waterloo   Waterloo  Waterloo   Waterloo       Off
 ## 5 University Ave W   Waterloo   Waterloo  Waterloo   Waterloo       Off
-## 6             &lt;NA&gt;   Waterloo   Waterloo  Waterloo   Waterloo       Off
+## 6             <NA>   Waterloo   Waterloo  Waterloo   Waterloo       Off
 ##    SurfaceMat Obstructio InstallDat Width_m Length_m
-## 1     Asphalt       &lt;NA&gt;       &lt;NA&gt;       3 139.3061
-## 2     Asphalt       &lt;NA&gt;       &lt;NA&gt;       3 378.1244
-## 3     Asphalt       &lt;NA&gt;       &lt;NA&gt;       3 680.8490
-## 4     Asphalt       &lt;NA&gt;       &lt;NA&gt;       3 450.6546
-## 5     Asphalt       &lt;NA&gt;       &lt;NA&gt;       3 333.1547
-## 6 Stone Chips       &lt;NA&gt;       &lt;NA&gt;       3 495.0084
+## 1     Asphalt       <NA>       <NA>       3 139.3061
+## 2     Asphalt       <NA>       <NA>       3 378.1244
+## 3     Asphalt       <NA>       <NA>       3 680.8490
+## 4     Asphalt       <NA>       <NA>       3 450.6546
+## 5     Asphalt       <NA>       <NA>       3 333.1547
+## 6 Stone Chips       <NA>       <NA>       3 495.0084
 ##                                                                                        Notes
 ## 1 Tunnel under rail connecting Elgin St N; Dismount bike sign, PATHWAY, SHORT TERM 2008-2012
-## 2                                                                                       &lt;NA&gt;
+## 2                                                                                       <NA>
 ## 3                                                                               Laurel Trail
-## 4                                                                                       &lt;NA&gt;
+## 4                                                                                       <NA>
 ## 5                                                                               Laurel Trail
-## 6                                                                                       &lt;NA&gt;
+## 6                                                                                       <NA>
 ##   LifeStatus RMWID CreatedUse CreatedDat LastEdited LastEdit_1 LucityAuto
-## 1 In Service  TRA1       &lt;NA&gt; 2011-08-25    RUCHRIS 2019-08-14        515
-## 2 In Service  TRA2       &lt;NA&gt; 2011-09-01    RUCHRIS 2019-08-14        516
-## 3 In Service  TRA3       &lt;NA&gt; 2011-09-01    RUCHRIS 2019-08-14        517
-## 4 In Service  TRA4       &lt;NA&gt; 2011-09-01        RMW 2018-11-05        518
-## 5 In Service  TRA5       &lt;NA&gt; 2011-09-01        RMW 2018-11-05        519
-## 6 In Service  TRA6       &lt;NA&gt; 2011-09-01    RUCHRIS 2019-08-14        520
+## 1 In Service  TRA1       <NA> 2011-08-25    RUCHRIS 2019-08-14        515
+## 2 In Service  TRA2       <NA> 2011-09-01    RUCHRIS 2019-08-14        516
+## 3 In Service  TRA3       <NA> 2011-09-01    RUCHRIS 2019-08-14        517
+## 4 In Service  TRA4       <NA> 2011-09-01        RMW 2018-11-05        518
+## 5 In Service  TRA5       <NA> 2011-09-01        RMW 2018-11-05        519
+## 6 In Service  TRA6       <NA> 2011-09-01    RUCHRIS 2019-08-14        520
 ##   InLucity LastSyncDa SegmentLuc SHAPESTLen ContractNu Comments
-## 1        1 2019-08-14         NA   139.3061       &lt;NA&gt;     &lt;NA&gt;
-## 2        1 2019-08-14         NA   378.1244       &lt;NA&gt;     &lt;NA&gt;
-## 3        1 2019-08-14         NA   680.8490       &lt;NA&gt;     &lt;NA&gt;
-## 4        1 2018-11-05       8693   450.6546       &lt;NA&gt;     &lt;NA&gt;
-## 5        1 2018-11-05       8693   333.1547       &lt;NA&gt;     &lt;NA&gt;
-## 6        1 2019-08-14         NA   495.0084       &lt;NA&gt;     &lt;NA&gt;
+## 1        1 2019-08-14         NA   139.3061       <NA>     <NA>
+## 2        1 2019-08-14         NA   378.1244       <NA>     <NA>
+## 3        1 2019-08-14         NA   680.8490       <NA>     <NA>
+## 4        1 2018-11-05       8693   450.6546       <NA>     <NA>
+## 5        1 2018-11-05       8693   333.1547       <NA>     <NA>
+## 6        1 2019-08-14         NA   495.0084       <NA>     <NA>
 ##                         geometry
 ## 1 MULTILINESTRING ((556575.6 ...
 ## 2 MULTILINESTRING ((536694.7 ...
 ## 3 MULTILINESTRING ((536731.5 ...
 ## 4 MULTILINESTRING ((537060.2 ...
 ## 5 MULTILINESTRING ((537371.8 ...
-## 6 MULTILINESTRING ((537627 48...</code></pre>
-<p>Looking at the <code>TrailName</code> column, we can see that this is actually fairly complex data. Each feature is not necessarily a complete trail, and even the same section of trail may have multiple names (e.g., the Iron Horse Trail is also considered part of the Trans Canada Trail). This model also ensures that the geometry is not duplicated in these sections, although it may make summarizing and some types of analysis more difficult. In order to answer our original question - which features in <code>trails</code> had lengths changed and as a result the values in <code>Length_m</code> in <code>trails_clip</code> are no longer accurate. To be safe, we can simple recompute the lengths using the <code>st_length</code> function</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="intro.html#cb29-1" aria-hidden="true"></a>trails_clip<span class="op">$</span>Length_m &lt;-<span class="st"> </span><span class="kw">st_length</span>(trails_clip)</span>
-<span id="cb29-2"><a href="intro.html#cb29-2" aria-hidden="true"></a><span class="kw">head</span>(trails<span class="op">$</span>Length_m)</span></code></pre></div>
-<pre><code>## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="intro.html#cb31-1" aria-hidden="true"></a><span class="kw">head</span>(trails_clip<span class="op">$</span>Length_m)</span></code></pre></div>
-<pre><code>## Units: [m]
-## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084</code></pre>
-<p>which we can see are equivalent, however notice that the output of the <code>st_length</code> function are aware of their units. This is dependent on the projection metadata and can be very useful. However,some functions may not know how to deal with data of this type (check <code>class(traisclip$Length_m</code>) in which case you can wrap it in <code>as.numeric</code> to convert to standard numeric vector data.</p>
-</div>
-<div id="measuring-the-length-of-lines-within-polygons" class="section level4" number="2.5.1.3">
-<h4><span class="header-section-number">2.5.1.3</span> Measuring the length of lines within polygons</h4>
-<p>One thing we may want to do is calculate the total length of trails in each census tract. Now that we know that where we have overlapping trails (i.e., segments of more than one trail overlapping) that these are stored as a single linear feature not multiple, we can simply intersect the <code>trails_clip</code> data with the census tract and then summarize by census tract.
-#### Average attirbute value of point within polygons</p>
-</div>
-<div id="average-value-of-a-raster-within-polygons" class="section level4" number="2.5.1.4">
-<h4><span class="header-section-number">2.5.1.4</span> Average value of a raster within polygons</h4>
-</div>
-<div id="extract-value-of-raster-to-points-as-new-attribute" class="section level4" number="2.5.1.5">
-<h4><span class="header-section-number">2.5.1.5</span> Extract value of raster to points as new attribute</h4>
-</div>
-<div id="downsample-a-raster" class="section level4" number="2.5.1.6">
-<h4><span class="header-section-number">2.5.1.6</span> Downsample a raster</h4>
-</div>
-<div id="interpolate-a-surface-and-average-over-polygons" class="section level4" number="2.5.1.7">
-<h4><span class="header-section-number">2.5.1.7</span> Interpolate a surface and average over polygons</h4>
-</div>
-<div id="dissovle-boundaries-between-adjacent-polygons" class="section level4" number="2.5.1.8">
-<h4><span class="header-section-number">2.5.1.8</span> Dissovle boundaries between adjacent polygons</h4>
-</div>
-<div id="calcuate-a-point-pattern-kensity-estimate" class="section level4" number="2.5.1.9">
-<h4><span class="header-section-number">2.5.1.9</span> Calcuate a point pattern kensity estimate</h4>
-</div>
+## 6 MULTILINESTRING ((537627 48...
+```
+
+Looking at the `TrailName` column, we can see that this is actually fairly complex data. Each feature is not necessarily a complete trail, and even the same section of trail may have multiple names (e.g., the Iron Horse Trail is also considered part of the Trans Canada Trail). This model also ensures that the geometry is not duplicated in these sections, although it may make summarizing and some types of analysis more difficult. In order to answer our original question - which features in `trails` had lengths changed and as a result the values in `Length_m` in `trails_clip` are no longer accurate. To be safe, we can simple recompute the lengths using the `st_length` function
+
+
+```r
+trails_clip$Length_m <- st_length(trails_clip)
+head(trails$Length_m)
+```
+
+```
+## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084
+```
+
+```r
+head(trails_clip$Length_m)
+```
+
+```
+## Units: [m]
+## [1] 139.3061 378.1244 680.8490 450.6546 333.1547 495.0084
+```
+
+which we can see are equivalent, however notice that the output of the `st_length` function are aware of their units. This is dependent on the projection metadata and can be very useful. However,some functions may not know how to deal with data of this type (check `class(traisclip$Length_m`) in which case you can wrap it in `as.numeric` to convert to standard numeric vector data.
+
+#### Measuring the length of lines within polygons
+One thing we may want to do is calculate the total length of trails in each census tract. Now that we know that where we have overlapping trails (i.e., segments of more than one trail overlapping) that these are stored as a single linear feature not multiple, we can simply intersect the `trails_clip` data with the census tract and then summarize by census tract. 
+#### Average attirbute value of point within polygons
+
+#### Average value of a raster within polygons
+
+#### Extract value of raster to points as new attribute
+
+#### Downsample a raster
+
+#### Interpolate a surface and average over polygons
+
+#### Dissovle boundaries between adjacent polygons
+
+
+
+#### Calcuate a point pattern kensity estimate
+
+--->
 </div>
 </div>
 <div id="temporal-data" class="section level2" number="2.6">
