@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Wrangling | Scientific Data Wrangling</title>
   <meta name="description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Wrangling | Scientific Data Wrangling" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Colin Robertson" />
 
 
-<meta name="date" content="2022-02-17" />
+<meta name="date" content="2022-03-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="practice.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +51,73 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -105,7 +170,10 @@
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#spatial-readings1"><i class="fa fa-check"></i><b>2.5.1</b> Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#temporal-data"><i class="fa fa-check"></i><b>2.6</b> Temporal data</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#temporal-data"><i class="fa fa-check"></i><b>2.6</b> Temporal data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="intro.html"><a href="intro.html#space-time-data---stars-package-exploration"><i class="fa fa-check"></i><b>2.6.1</b> Space-time data - STARS package exploration</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a></li>
 <li class="chapter" data-level="4" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>4</b> Assignments</a>
@@ -118,14 +186,14 @@
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="assignments.html"><a href="assignments.html#assignment-2---real-world-data-wrangling"><i class="fa fa-check"></i><b>4.2</b> Assignment 2 - Real world data wrangling</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html"><i class="fa fa-check"></i><b>5</b> Term Project - Analytics Studio Demo</a>
+<li class="chapter" data-level="5" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html"><i class="fa fa-check"></i><b>5</b> Term Project - Analytics Studio Demo</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a>
+<li class="chapter" data-level="5.1" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html#demonstration"><i class="fa fa-check"></i><b>5.1.1</b> Demonstration</a></li>
-<li class="chapter" data-level="5.1.2" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html#critique"><i class="fa fa-check"></i><b>5.1.2</b> Critique</a></li>
+<li class="chapter" data-level="5.1.1" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#demonstration"><i class="fa fa-check"></i><b>5.1.1</b> Demonstration</a></li>
+<li class="chapter" data-level="5.1.2" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#critique"><i class="fa fa-check"></i><b>5.1.2</b> Critique</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="assignments.html"><a href="assignments.html#submission"><i class="fa fa-check"></i><b>5.2</b> Submission</a></li>
+<li class="chapter" data-level="5.2" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#submission-1"><i class="fa fa-check"></i><b>5.2</b> Submission</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -236,15 +304,17 @@ Read data in:
 ```
 
 ```
-## Reading layer `lct_000b16a_e' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/lct_000b16a_e.shp' using driver `ESRI Shapefile'
+## Reading layer `lct_000b16a_e' from data source 
+##   `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/lct_000b16a_e.shp' 
+##   using driver `ESRI Shapefile'
 ## Simple feature collection with 5721 features and 8 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: 3912489 ymin: 693729 xmax: 8996156 ymax: 2810986
-## projected CRS:  PCS_Lambert_Conformal_Conic
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 3912489 ymin: 693729 xmax: 8996156 ymax: 2810986
+## Projected CRS: PCS_Lambert_Conformal_Conic
 ```
 
-<img src="GG606_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<img src="GG606_files/figure-html/unnamed-chunk-1-1.png" width="672" />
 
 The [Region of Waterloo](https://rowopendata-rmw.opendata.arcgis.com/datasets/KitchenerGIS::park-natural-area-ecological-land-classification/explore?location=43.442066%2C-80.480368%2C12.00&showTable=true) has an open data we can access some other datasets from:
 
@@ -253,21 +323,24 @@ We now have `ct` which is an `sf` class which represents census tracts in the Wa
 #### Read in our three spatial data files 
 
 ```
-## Reading layer `Trails' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Trails/Trails.shp' using driver `ESRI Shapefile'
+## Reading layer `Trails' from data source 
+##   `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Trails/Trails.shp' 
+##   using driver `ESRI Shapefile'
 ## Simple feature collection with 1633 features and 28 fields
-## geometry type:  MULTILINESTRING
-## dimension:      XY
-## bbox:           xmin: -80.81168 ymin: 43.26102 xmax: -80.27309 ymax: 43.65101
-## geographic CRS: WGS 84
+## Geometry type: MULTILINESTRING
+## Dimension:     XY
+## Bounding box:  xmin: -80.81168 ymin: 43.26102 xmax: -80.27309 ymax: 43.65101
+## Geodetic CRS:  WGS 84
 ```
 
 ```
-## Reading layer `Park_Natural_Area_Ecological_Land_Classification' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Park_Natural_Area_Ecological_Land_Classification/Park_Natural_Area_Ecological_Land_Classification.shp' using driver `ESRI Shapefile'
+## Reading layer `Park_Natural_Area_Ecological_Land_Classification' from data source `/Users/colinr23/Dropbox/course/g606/tec/gg606/data/Park_Natural_Area_Ecological_Land_Classification/Park_Natural_Area_Ecological_Land_Classification.shp' 
+##   using driver `ESRI Shapefile'
 ## Simple feature collection with 625 features and 12 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: -80.55806 ymin: 43.37734 xmax: -80.40301 ymax: 43.50665
-## geographic CRS: WGS 84
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -80.55806 ymin: 43.37734 xmax: -80.40301 ymax: 43.50665
+## Geodetic CRS:  WGS 84
 ```
 
 ```
@@ -298,7 +371,7 @@ We now have `ct` which is an `sf` class which represents census tracts in the Wa
 ## [1] 4326
 ```
 
-<img src="GG606_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="GG606_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 Here we can make some further observations of our data. 
 
@@ -316,7 +389,7 @@ studyArea <- ct %>%
 plot(st_geometry(studyArea))
 ```
 
-<img src="GG606_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="GG606_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 which we can now provide to a clip operation..
 
@@ -402,10 +475,10 @@ head(trails)
 
 ```
 ## Simple feature collection with 6 features and 28 fields
-## geometry type:  MULTILINESTRING
-## dimension:      XY
-## bbox:           xmin: 536694.7 ymin: 4801974 xmax: 556613.6 ymax: 4814768
-## projected CRS:  NAD83 / UTM zone 17N
+## Geometry type: MULTILINESTRING
+## Dimension:     XY
+## Bounding box:  xmin: 536694.7 ymin: 4801974 xmax: 556613.6 ymax: 4814768
+## Projected CRS: NAD83 / UTM zone 17N
 ##   OBJECTID TrailType                                              TrailName
 ## 1        1 Multi-Use                                                   <NA>
 ## 2        2 Multi-Use                 Trans Canada Trail \\ Iron Horse Trail
@@ -503,7 +576,39 @@ One thing we may want to do is calculate the total length of trails in each cens
 </div>
 <div id="temporal-data" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Temporal data</h2>
+<p>Temporal data wrangling - there are many many packages and classes available for handling temporal data and doing time series analysis. We will review some of the basic packages for reading and manipulating time-based data.</p>
+<div id="space-time-data---stars-package-exploration" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Space-time data - STARS package exploration</h3>
+<p>Let’s work thru some of the vignettes describing the relatively new <code>stars</code> package which combines functionality and classes for spatial and temporal data.</p>
+<p><a href="https://r-spatial.github.io/stars/articles/stars1.html">View the vignette here</a></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(stars)</span></code></pre></div>
+<pre><code>## Loading required package: abind</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true"></a><span class="kw">methods</span>(<span class="dt">class =</span> <span class="st">&quot;stars&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] [                 [[&lt;-              [&lt;-               %in%             
+##  [5] $&lt;-               adrop             aggregate         aperm            
+##  [9] as_tibble         as.data.frame     c                 coerce           
+## [13] contour           cut               dim               dimnames         
+## [17] dimnames&lt;-        droplevels        filter            hist             
+## [21] image             initialize        is.na             Math             
+## [25] merge             mutate            Ops               plot             
+## [29] predict           print             pull              rename           
+## [33] replace_na        select            show              slice            
+## [37] slotsFromS3       split             st_apply          st_area          
+## [41] st_as_sf          st_as_sfc         st_as_stars       st_bbox          
+## [45] st_coordinates    st_crop           st_crs            st_crs&lt;-         
+## [49] st_dimensions     st_dimensions&lt;-   st_downsample     st_extract       
+## [53] st_geometry       st_interpolate_aw st_intersects     st_join          
+## [57] st_mosaic         st_normalize      st_redimension    st_sample        
+## [61] st_set_bbox       st_transform_proj st_transform      transmute        
+## [65] write_stars      
+## see &#39;?methods&#39; for accessing help and source code</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro.html#cb5-1" aria-hidden="true"></a>tif =<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;tif/L7_ETMs.tif&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;stars&quot;</span>)</span>
+<span id="cb5-2"><a href="intro.html#cb5-2" aria-hidden="true"></a>x =<span class="st"> </span><span class="kw">read_stars</span>(tif)</span>
+<span id="cb5-3"><a href="intro.html#cb5-3" aria-hidden="true"></a><span class="kw">plot</span>(x, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## downsample set to 1</code></pre>
+<p><img src="GG606_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -516,7 +621,6 @@ One thing we may want to do is calculate the total length of trails in each cens
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -535,6 +639,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -555,6 +660,10 @@ gitbook.start({
 "text": null
 },
 "download": ["GG606.pdf", "GG606.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
