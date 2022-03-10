@@ -20,6 +20,8 @@ spatial-readings1
 temporal-data
 space-time-data---stars-package-exploration
 practice
+reproducible-research
+resources
 assignments
 assignment-1---importing-parsing-and-querying-data-in-the-wild
 dataset
@@ -31,14 +33,3 @@ overview
 demonstration
 critique
 submission-1
-read-in-our-three-spatial-data-files
-measuring-the-length-of-lines-within-polygons
-average-attirbute-value-of-point-within-polygons
-average-value-of-a-raster-within-polygons
-extract-value-of-raster-to-points-as-new-attribute
-downsample-a-raster
-interpolate-a-surface-and-average-over-polygons
-dissovle-boundaries-between-adjacent-polygons
-calcuate-a-point-pattern-kensity-estimate
-reproducible-research
-resources

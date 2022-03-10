@@ -24,7 +24,7 @@
 <meta name="author" content="Colin Robertson" />
 
 
-<meta name="date" content="2022-03-03" />
+<meta name="date" content="2022-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,7 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -175,7 +176,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6.1" data-path="intro.html"><a href="intro.html#space-time-data---stars-package-exploration"><i class="fa fa-check"></i><b>2.6.1</b> Space-time data - STARS package exploration</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a></li>
+<li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="practice.html"><a href="practice.html#reproducible-research"><i class="fa fa-check"></i><b>3.1</b> Reproducible Research</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="practice.html"><a href="practice.html#resources"><i class="fa fa-check"></i><b>3.1.1</b> Resources</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>4</b> Assignments</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="assignments.html"><a href="assignments.html#assignment-1---importing-parsing-and-querying-data-in-the-wild"><i class="fa fa-check"></i><b>4.1</b> Assignment 1 - Importing, parsing, and querying data in the wild</a>
@@ -314,7 +321,7 @@ Read data in:
 ## Projected CRS: PCS_Lambert_Conformal_Conic
 ```
 
-<img src="GG606_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<img src="GG606_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 The [Region of Waterloo](https://rowopendata-rmw.opendata.arcgis.com/datasets/KitchenerGIS::park-natural-area-ecological-land-classification/explore?location=43.442066%2C-80.480368%2C12.00&showTable=true) has an open data we can access some other datasets from:
 
@@ -371,7 +378,7 @@ We now have `ct` which is an `sf` class which represents census tracts in the Wa
 ## [1] 4326
 ```
 
-<img src="GG606_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<img src="GG606_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 Here we can make some further observations of our data. 
 
@@ -389,7 +396,7 @@ studyArea <- ct %>%
 plot(st_geometry(studyArea))
 ```
 
-<img src="GG606_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="GG606_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 which we can now provide to a clip operation..
 
@@ -606,7 +613,7 @@ One thing we may want to do is calculate the total length of trails in each cens
 <span id="cb5-2"><a href="intro.html#cb5-2" aria-hidden="true"></a>x =<span class="st"> </span><span class="kw">read_stars</span>(tif)</span>
 <span id="cb5-3"><a href="intro.html#cb5-3" aria-hidden="true"></a><span class="kw">plot</span>(x, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## downsample set to 1</code></pre>
-<p><img src="GG606_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="GG606_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 
 </div>
 </div>
