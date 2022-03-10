@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Practice | Scientific Data Wrangling</title>
   <meta name="description" content="This course covers the data science skills comprising data visualization, data wrangling (cleaning, combining, modelling, etc.), and methodological and statistical design, which are an important part of the scientific method." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Practice | Scientific Data Wrangling" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Colin Robertson" />
 
 
-<meta name="date" content="2022-02-17" />
+<meta name="date" content="2022-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,9 @@
   
 <link rel="prev" href="intro.html"/>
 <link rel="next" href="assignments.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,8 +51,9 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 
@@ -105,9 +107,18 @@
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#spatial-readings1"><i class="fa fa-check"></i><b>2.5.1</b> Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#temporal-data"><i class="fa fa-check"></i><b>2.6</b> Temporal data</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#temporal-data"><i class="fa fa-check"></i><b>2.6</b> Temporal data</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="intro.html"><a href="intro.html#space-time-data---stars-package-exploration"><i class="fa fa-check"></i><b>2.6.1</b> Space-time data - STARS package exploration</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="practice.html"><a href="practice.html"><i class="fa fa-check"></i><b>3</b> Practice</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="practice.html"><a href="practice.html#reproducible-research"><i class="fa fa-check"></i><b>3.1</b> Reproducible Research</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="practice.html"><a href="practice.html#resources"><i class="fa fa-check"></i><b>3.1.1</b> Resources</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="assignments.html"><a href="assignments.html"><i class="fa fa-check"></i><b>4</b> Assignments</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="assignments.html"><a href="assignments.html#assignment-1---importing-parsing-and-querying-data-in-the-wild"><i class="fa fa-check"></i><b>4.1</b> Assignment 1 - Importing, parsing, and querying data in the wild</a>
@@ -118,14 +129,14 @@
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="assignments.html"><a href="assignments.html#assignment-2---real-world-data-wrangling"><i class="fa fa-check"></i><b>4.2</b> Assignment 2 - Real world data wrangling</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html"><i class="fa fa-check"></i><b>5</b> Term Project - Analytics Studio Demo</a>
+<li class="chapter" data-level="5" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html"><i class="fa fa-check"></i><b>5</b> Term Project - Analytics Studio Demo</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a>
+<li class="chapter" data-level="5.1" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#overview"><i class="fa fa-check"></i><b>5.1</b> Overview</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html#demonstration"><i class="fa fa-check"></i><b>5.1.1</b> Demonstration</a></li>
-<li class="chapter" data-level="5.1.2" data-path="term-project-analytics-studio-demo.html"><a href="term-project-analytics-studio-demo.html#critique"><i class="fa fa-check"></i><b>5.1.2</b> Critique</a></li>
+<li class="chapter" data-level="5.1.1" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#demonstration"><i class="fa fa-check"></i><b>5.1.1</b> Demonstration</a></li>
+<li class="chapter" data-level="5.1.2" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#critique"><i class="fa fa-check"></i><b>5.1.2</b> Critique</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="assignments.html"><a href="assignments.html#submission"><i class="fa fa-check"></i><b>5.2</b> Submission</a></li>
+<li class="chapter" data-level="5.2" data-path="term-project---analytics-studio-demo.html"><a href="term-project---analytics-studio-demo.html#submission-1"><i class="fa fa-check"></i><b>5.2</b> Submission</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -149,11 +160,21 @@
             <section class="normal" id="section-">
 <div id="practice" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Practice</h1>
-<!-- ## Reproducible Research -->
+<div id="reproducible-research" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Reproducible Research</h2>
+<div id="resources" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Resources</h3>
+<ul>
+<li><a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">install git instructions and tutorial - step 1</a></li>
+<li><a href="https://cfss.uchicago.edu/setup/git-configure/">Details on configuring git in r-studio - resource 1</a></li>
+<li><a href="https://happygitwithr.com/rstudio-git-github.html">Details on configuring git in r-studio - resource 2</a></li>
+</ul>
 <!-- ## Data Sharing and Collaboration -->
 <!-- ## R in Production -->
 <!-- ## Presentations -->
 
+</div>
+</div>
 </div>
             </section>
 
@@ -165,7 +186,6 @@
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -184,6 +204,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -204,6 +225,10 @@ gitbook.start({
 "text": null
 },
 "download": ["GG606.pdf", "GG606.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
